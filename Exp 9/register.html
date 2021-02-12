@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+  <style type="text/css">
+  span{
+    color: rgb(213, 223, 255);
+    font-size: 18px;
+}
+  </style>
+</head>
+<body>
+   <div class="container">
+       
+   		<form action="ajaxvalidation" method="POST" onsubmit="return validator(this);">
+   			<div>
+   				<h2>Registration</h2>
+   			</div>
+   			<table>
+    <tr>
+        <td>Name</td>
+        <td><input type="text" name="username" id="name" onchange="check(this.name,this.value);">
+          <span id="usernamemsg"></span></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="text" name="emailId" id="mail" onchange="check(this.name,this.value);">
+          <span id="emailIdmsg"></span></td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td><input type="text" id="age" name="dob" onchange="check(this.name,this.value);">
+          <span id="dobmsg"></span></td>
+    </tr>
+
+    <tr>
+        <td>Password</td>
+        <td><input type="password" name="password1" id="password1" onchange="check(this.name,this.value);">
+          <span id="password1msg"></span></td>
+    </tr>
+    <tr>
+        <td>Retype Password</td>
+        <td><input type="password" name="password2" id="password2" onchange="passwordcheck(this.value);">
+          <span id="password2msg"></span></td>
+    </tr>
+    
+    
+    
+</table>
+        <input type = "submit" value="Submit" id="submitbtn"/>
+   		</form>
+      
+   </div>
+
+  <script type="text/javascript">
+
+  function check(field,data){
+      if(data!=null&&data!=""){
+       
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function(){
+      if(this.readyState ==4  && this.status == 200){
+            if(this.responseText!=null && this.responseText!="")
+            {
+              document.getElementById(field+"msg").style.display = "block";
+              document.getElementById(field+"msg").innerHTML = this.responseText;
+              document.getElementById("submitbtn").disabled = true;
+            }
+           if(this.responseText == "valid"){
+              document.getElementById(field+"msg").style.display = "none";
+              document.getElementById("submitbtn").disabled = false;
+           }
+
+        }
+      };
+      xhttp.open("GET","ajaxvalidation?field="+field+"&data="+data,true);
+      xhttp.send();
+    }
+  }
+
+  function passwordcheck(password2){
+    var password1 = document.getElementById("password1").value;
+    if(password1 !== password2){
+      document.getElementById("password2msg").style.display = "block";
+      document.getElementById("password2msg").innerHTML ="Password MisMatching";
+      document.getElementById("submitbtn").disabled = true;
+    }
+    else{
+          document.getElementById("password2msg").style.display = "none";
+          document.getElementById("submitbtn").disabled = false;
+        }
+  }
+
+  function validator(form){
+    var inputs = form.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+            if(inputs[i].value == ""){
+                alert("Please fill all the fields");
+                return false;
+            }
+          }
+          return true;
+  }
+ 
+  </script>
+</body>
+</html>

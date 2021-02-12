@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<class>
+	<student roll="1001">
+	<name>Hari</name>
+	<dept>IT</dept>
+	<email>hari@gmail.com</email>
+	</student>
+	
+	
+	<student roll="1002">
+	<name>Prasath</name>
+	<dept>CSE</dept>
+	<email>prasath@gmail.com</email>
+	</student>
+	
+	
+	<student roll="1003">
+	<name>Ravi</name>
+	<dept>ECE</dept>
+	<email>ravi@yahoo.com</email>
+	</student>
+	
+</class>

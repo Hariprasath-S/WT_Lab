@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>  
+   
+<servlet>  
+<servlet-name>parse_xml</servlet-name>  
+<servlet-class>ParseServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>parse_xml</servlet-name>  
+<url-pattern>/details</url-pattern>  
+</servlet-mapping>   
+  
+</web-app>  

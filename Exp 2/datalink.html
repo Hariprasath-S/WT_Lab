@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head><title>Data Link layer</title></head>
+<body>
+    <h2>Data LinkLayer</h2>
+    <p>
+        The data link layer is responsible for the node to node delivery of the message. The main function of this layer is to make sure data transfer is error-free from one node to another, over the physical layer. When a packet arrives in a network, it is the responsibility of DLL to transmit it to the Host using its MAC address.
+        Data Link Layer is divided into two sub layers :
+        
+        Logical Link Control (LLC)
+        Media Access Control (MAC)
+        The packet received from Network layer is further divided into frames depending on the frame size of NIC(Network Interface Card). DLL also encapsulates Sender and Receiver’s MAC address in the header.
+        
+        The Receiver’s MAC address is obtained by placing an ARP(Address Resolution Protocol) request onto the wire asking “Who has that IP address?” and the destination host will reply with its MAC address.
+    </p>
+    <a href="imagemap.html">Back</a>
+</body>

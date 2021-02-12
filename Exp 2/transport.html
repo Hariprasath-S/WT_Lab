@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head><title>Transport layer</title></head>
+<body>
+    <h2>Transport Layer</h2>
+    <p>
+        Transport layer provides services to application layer and takes services from network layer. The data in the transport layer is referred to as Segments. It is responsible for the End to End Delivery of the complete message. The transport layer also provides the acknowledgement of the successful data transmission and re-transmits the data if an error is found.
+• At sender’s side:
+Transport layer receives the formatted data from the upper layers, performs Segmentation and also implements Flow & Error control to ensure proper data transmission. It also adds Source and Destination port number in its header and forwards the segmented data to the Network Layer.
+Note: The sender need to know the port number associated with the receiver’s application.
+Generally, this destination port number is configured, either by default or manually. For example, when a web application makes a request to a web server, it typically uses port number 80, because this is the default port assigned to web applications. Many applications have default port assigned.
+• At receiver’s side:
+Transport Layer reads the port number from its header and forwards the Data which it has received to the respective application. It also performs sequencing and reassembling of the segmented data.
+    </p>
+    <a href="imagemap.html">Back</a>
+</body>
